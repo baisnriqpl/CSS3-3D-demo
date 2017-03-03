@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	body{background: black;}
+		div{
+			width: 400px;
+			height: 400px;
+			position: absolute;
+			left: 30%;
+			top:20%;
+			transform-style:preserve-3d;
+			transform: perspective(1200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+			animation: 10s move cubic-bezier(0.65,0.05,0.36,0.6) infinite;
+		}
+
+		@keyframes move{
+			100%{
+				transform: perspective(800px) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+			}
+		}
+
+		img{
+			width: 380px;
+			height: 380px;
+			position: absolute;
+			left: 0;
+			top:0;
+			font-size: 200px;
+			line-height: 400px;
+			box-shadow: 0 0 100px white;
+		}
+
+		img:nth-of-type(1){
+			transform: translateZ(190px);
+		}
+
+		img:nth-of-type(2){
+			transform: translateZ(-190px);
+		}
+
+		img:nth-of-type(3){
+			transform-origin:top;
+			transform: translateZ(190px) rotateX(-90deg);
+		}
+
+		img:nth-of-type(4){
+			transform-origin: bottom;
+			transform:translateZ(190px) rotateX(90deg);
+		}
+
+		img:nth-of-type(5){
+			transform-origin:left;
+			transform: translateZ(190px) rotateY(90deg);
+		}
+
+		img:nth-of-type(6){
+			transform-origin:right; 
+			transform: translateZ(190px) rotateY(-90deg)
+		}
+
+	</style>
+</head>
+<body>
+<div>
+	<img src="./image/1.jpg">
+	<img src="./image/2.jpg">
+	<img src="./image/3.jpg">
+	<img src="./image/4.jpg">
+	<img src="./image/5.jpg">
+	<img src="./image/6.jpg">
+</div>
+</body>
+</html>
